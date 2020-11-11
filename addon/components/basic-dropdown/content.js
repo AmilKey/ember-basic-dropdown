@@ -238,6 +238,7 @@ export default Component.extend({
 
   animateIn() {
     waitForAnimations(this.dropdownElement, () => {
+      if (this.isDestroyed || this.isDestroying) return;
       this.set('animationClass', this.get('transitionedInClass'));
     });
   },
